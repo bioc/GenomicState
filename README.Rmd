@@ -19,7 +19,7 @@ knitr::opts_chunk$set(
 [![Bioc downloads rank](https://bioconductor.org/shields/downloads/release/GenomicState.svg)](http://bioconductor.org/packages/stats/data-annotation/GenomicState)
 [![Bioc support](https://bioconductor.org/shields/posts/GenomicState.svg)](https://support.bioconductor.org/tag/GenomicState)
 [![Codecov test coverage](https://codecov.io/gh/LieberInstitute/GenomicState/branch/devel/graph/badge.svg)](https://codecov.io/gh/LieberInstitute/GenomicState?branch=devel)
-[![R build status](https://github.com/LieberInstitute/GenomicState/workflows/R-CMD-check-bioc/badge.svg)](https://github.com/LieberInstitute/GenomicState/actions)
+[![R build status](https://github.com/LieberInstitute/GenomicState/actions/workflows/check-bioc.yml/badge.svg)](https://github.com/LieberInstitute/GenomicState/actions/workflows/check-bioc.yml)
 [![GitHub issues](https://img.shields.io/github/issues/LieberInstitute/GenomicState)](https://github.com/LieberInstitute/GenomicState/issues)
 [![GitHub pulls](https://img.shields.io/github/issues-pr/LieberInstitute/GenomicState)](https://github.com/LieberInstitute/GenomicState/pulls)
 <!-- badges: end -->

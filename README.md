@@ -14,7 +14,7 @@ support](https://bioconductor.org/shields/posts/GenomicState.svg)](https://suppo
 [![Codecov test
 coverage](https://codecov.io/gh/LieberInstitute/GenomicState/branch/devel/graph/badge.svg)](https://codecov.io/gh/LieberInstitute/GenomicState?branch=devel)
 [![R build
-status](https://github.com/LieberInstitute/GenomicState/workflows/R-CMD-check-bioc/badge.svg)](https://github.com/LieberInstitute/GenomicState/actions)
+status](https://github.com/LieberInstitute/GenomicState/actions/workflows/check-bioc.yml/badge.svg)](https://github.com/LieberInstitute/GenomicState/actions/workflows/check-bioc.yml)
 [![GitHub
 issues](https://img.shields.io/github/issues/LieberInstitute/GenomicState)](https://github.com/LieberInstitute/GenomicState/issues)
 [![GitHub
