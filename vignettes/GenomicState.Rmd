@@ -60,7 +60,8 @@ bib <- c(
     glue = citation("glue")[1],
     AnnotationHub = citation("AnnotationHub")[1],
     AnnotationHubData = citation("AnnotationHubData")[1],
-    GenomicRanges = citation("GenomicRanges")[1]
+    GenomicRanges = citation("GenomicRanges")[1],
+	txdbmaker = citation("txdbmaker")[1]
 )
 ```
 
@@ -332,6 +333,7 @@ The `r Biocpkg('GenomicState')` package `r Citep(bib[['GenomicState']])` was mad
 * `r Biocpkg('AnnotationHub')` `r Citep(bib[['AnnotationHub']])`
 * `r Biocpkg('AnnotationHubData')` `r Citep(bib[['AnnotationHubData']])`
 * `r Biocpkg('GenomicRanges')` `r Citep(bib[['GenomicRanges']])`
+* `r Biocpkg('txdbmaker')` `r Citep(bib[['txdbmaker']])`
     
 Code for creating the vignette
 

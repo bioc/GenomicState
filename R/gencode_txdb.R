@@ -13,6 +13,7 @@
 #'
 #' @return A [GenomicFeatures::TxDb-class] object.
 #' @export
+#' @importFrom txdbmaker makeTxDbFromGFF
 #' @author Leonardo Collado-Torres
 #' @references Based on code for the `brainflowprobes` package at:
 #' <https://github.com/LieberInstitute/brainflowprobes/blob/devel/data-raw/create_sysdata.R>
@@ -52,7 +53,7 @@ gencode_txdb <- function(
     # gencode_txdb("31", "hg19", chrs = "chr21")
     ## though it works with
     # gencode_txdb("31", "hg18")
-    # txdb <- GenomicFeatures::makeTxDbFromGFF(
+    # txdb <- txdbmaker::makeTxDbFromGFF(
     #     gtf_file,
     #     organism = 'Homo sapiens',
     #     chrominfo = GenomeInfoDb::Seqinfo(genome = genome)
@@ -71,21 +72,21 @@ gencode_txdb <- function(
     )
 
     # message(paste(Sys.time(), "preparing metadata"))
-    metadata <- GenomicFeatures:::.prepareGFFMetadata(
+    metadata <- txdbmaker:::.prepareGFFMetadata(
         file = gtf_file,
         dataSource = NA, organism = "Homo sapiens",
         taxonomyId = NA, miRBaseBuild = NA, metadata = NULL
     )
 
     message(paste(Sys.time(), "building the txdb object"))
-    gr <- GenomicFeatures:::.tidy_seqinfo(
+    gr <- txdbmaker:::.tidy_seqinfo(
         gr = gencode_gtf,
         chrominfo = GenomeInfoDb::Seqinfo(genome = genome)
     )
 
     ## Prune again since GenomeInfoDb::Seqinfo() will return many seqlevels
     gr <- GenomeInfoDb::keepSeqlevels(gr, chrs, pruning.mode = "coarse")
-    txdb <- GenomicFeatures::makeTxDbFromGRanges(gr, metadata = metadata)
+    txdb <- txdbmaker::makeTxDbFromGRanges(gr, metadata = metadata)
     return(txdb)
 }
 
