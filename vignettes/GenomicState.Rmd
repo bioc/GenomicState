@@ -36,7 +36,7 @@ library("RefManageR")
 ## Write bibliography information
 bib <- c(
     R = citation(),
-    BiocStyle = citation("BiocStyle"),
+    BiocStyle = citation("BiocStyle")[1],
     GenomeInfoDb = RefManageR::BibEntry(
         bibtype = "manual",
         key = "GenomeInfoDb",
@@ -49,18 +49,18 @@ bib <- c(
     RefManageR = citation("RefManageR")[1],
     rmarkdown = citation("rmarkdown")[1],
     rtracklayer = citation("rtracklayer")[1],
-    sessioninfo = citation("sessioninfo"),
-    testthat = citation("testthat"),
-    GenomicFeatures = citation("GenomicFeatures"),
+    sessioninfo = citation("sessioninfo")[1],
+    testthat = citation("testthat")[1],
+    GenomicFeatures = citation("GenomicFeatures")[1],
     bumphunter = citation("bumphunter")[1],
     derfinder = citation("derfinder")[1],
-    AnnotationDbi = citation("AnnotationDbi"),
-    IRanges = citation("IRanges"),
-    org.Hs.eg.db = citation("org.Hs.eg.db"),
-    glue = citation("glue"),
-    AnnotationHub = citation("AnnotationHub"),
-    AnnotationHubData = citation("AnnotationHubData"),
-    GenomicRanges = citation("GenomicRanges")
+    AnnotationDbi = citation("AnnotationDbi")[1],
+    IRanges = citation("IRanges")[1],
+    org.Hs.eg.db = citation("org.Hs.eg.db")[1],
+    glue = citation("glue")[1],
+    AnnotationHub = citation("AnnotationHub")[1],
+    AnnotationHubData = citation("AnnotationHubData")[1],
+    GenomicRanges = citation("GenomicRanges")[1]
 )
 ```
 
