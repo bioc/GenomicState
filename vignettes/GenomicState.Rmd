@@ -37,13 +37,7 @@ library("RefManageR")
 bib <- c(
     R = citation(),
     BiocStyle = citation("BiocStyle")[1],
-    GenomeInfoDb = RefManageR::BibEntry(
-        bibtype = "manual",
-        key = "GenomeInfoDb",
-        author = "Sonali Arora and Martin Morgan and Marc Carlson and H. Pagès",
-        title = "GenomeInfoDb: Utilities for manipulating chromosome and other 'seqname' identifiers",
-        year = 2017, doi = "10.18129/B9.bioc.GenomeInfoDb"
-    ),
+    Seqinfo = citation("Seqinfo")[1],
     knitr = citation("knitr")[3],
     GenomicState = citation("GenomicState")[1],
     RefManageR = citation("RefManageR")[1],
@@ -316,7 +310,7 @@ The `r Biocpkg('GenomicState')` package `r Citep(bib[['GenomicState']])` was mad
 
 * R `r Citep(bib[['R']])`
 * `r Biocpkg('BiocStyle')` `r Citep(bib[['BiocStyle']])`
-* `r Biocpkg('GenomeInfoDb')` `r Citep(bib[['GenomeInfoDb']])`
+* `r Biocpkg('Seqinfo')` `r Citep(bib[['Seqinfo']])`
 * `r CRANpkg('knitr')` `r Citep(bib[['knitr']])`
 * `r CRANpkg("RefManageR")` `r Citep(bib[["RefManageR"]])`
 * `r CRANpkg('rmarkdown')` `r Citep(bib[['rmarkdown']])`

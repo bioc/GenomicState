@@ -13,7 +13,8 @@
 #'
 #' @return A [GenomicFeatures::TxDb-class] object.
 #' @export
-#' @importFrom txdbmaker makeTxDbFromGFF
+#' @importFrom Seqinfo seqlevels<-
+#' @importFrom txdbmaker makeTxDbFromGFF makeTxDbFromGRanges
 #' @author Leonardo Collado-Torres
 #' @references Based on code for the `brainflowprobes` package at:
 #' <https://github.com/LieberInstitute/brainflowprobes/blob/devel/data-raw/create_sysdata.R>
@@ -56,10 +57,11 @@ gencode_txdb <- function(
     # txdb <- txdbmaker::makeTxDbFromGFF(
     #     gtf_file,
     #     organism = 'Homo sapiens',
-    #     chrominfo = GenomeInfoDb::Seqinfo(genome = genome)
+    #     chrominfo = Seqinfo::Seqinfo(genome = genome)
     # )
     #
-    # return(GenomeInfoDb::keepSeqlevels(txdb, chrs, pruning.mode = "coarse"))
+    # seqlevels(txdb, pruning.mode = "coarse") <- chrs
+    # return(txdb)
 
     ## Import the data
     message(paste(Sys.time(), "importing", gtf_file))
@@ -67,9 +69,7 @@ gencode_txdb <- function(
 
     ## Keep only the main chrs
     message(paste(Sys.time(), "keeping relevant chromosomes"))
-    gencode_gtf <- GenomeInfoDb::keepSeqlevels(gencode_gtf, chrs,
-        pruning.mode = "coarse"
-    )
+    seqlevels(gencode_gtf, pruning.mode = "coarse") <- chrs
 
     # message(paste(Sys.time(), "preparing metadata"))
     metadata <- txdbmaker:::.prepareGFFMetadata(
@@ -81,11 +81,11 @@ gencode_txdb <- function(
     message(paste(Sys.time(), "building the txdb object"))
     gr <- txdbmaker:::.tidy_seqinfo(
         gr = gencode_gtf,
-        chrominfo = GenomeInfoDb::Seqinfo(genome = genome)
+        chrominfo = Seqinfo::Seqinfo(genome = genome)
     )
 
-    ## Prune again since GenomeInfoDb::Seqinfo() will return many seqlevels
-    gr <- GenomeInfoDb::keepSeqlevels(gr, chrs, pruning.mode = "coarse")
+    ## Prune again since Seqinfo::Seqinfo() will return many seqlevels
+    seqlevels(gr, pruning.mode = "coarse") <- chrs
     txdb <- txdbmaker::makeTxDbFromGRanges(gr, metadata = metadata)
     return(txdb)
 }
